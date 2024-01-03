@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torchvision.models as models
-
+import time
 
 class PerceptualLoss(nn.Module):
     def __init__(self):

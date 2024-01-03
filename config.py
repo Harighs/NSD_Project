@@ -4,13 +4,14 @@ class Config:
     input_dim = 16000
     output_dim = (256, 256)  # Height, Width
     learning_rate = 0.001
-    batch_size = 1
-    num_epochs = 20
-    subject_to_use = (1,2,5,7)
+    batch_size = 32
+    num_epochs = 2
+    subject_to_use = (1,)
     data_path = '/media/hari/2TB_T7/DATASET/FMRI/NSD-Furkan_Ozcelik/brain-diffuser/data/processed_data/'
     Save_Model = True
     Saving_Model_Path = 'Saved_Models/'
     normalize_fmri = True
+    data_splitting_ratio = 0.8
     
     # Normal details (Not Changable)
     training_start_time = None

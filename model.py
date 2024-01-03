@@ -188,9 +188,9 @@ class Very_Deep_VAE(nn.Module):
         z = self.reparameterize(mean, logvar)
         return self.decode(z), mean, logvar
 
-    # def loss_function(outputs, x):
-    #     recon_x, mean, logvar = outputs
-    #     height, width = config.output_dim
+    def loss_function(outputs, x):
+        recon_x, mean, logvar = outputs
+        height, width = config.output_dim
         
-    #     loss = perceptual_loss(recon_x.view(-1, 3, height, width), x)
-    #     return loss
+        loss = perceptual_loss(recon_x.view(-1, 3, height, width), x)
+        return loss
