@@ -8,7 +8,14 @@ import time
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
+average_training_loss = []
+Tranining_Start_Time = None
+Training_End_Time = None
+
 def train(model, train_loader, criterion, optimizer, config):
+    global Tranining_Start_Time
+    global Training_End_Time
+    
     if torch.cuda.is_available():
         device = torch.device('cuda')
     else:
@@ -26,16 +33,12 @@ def train(model, train_loader, criterion, optimizer, config):
     print('Learning Rate : ', config.learning_rate)
     print('Loss Function : ', criterion)
     print('Optimizer : ', optimizer)
-    print('DataLoader : ', train_loader)
+    print('Parameters : ', sum(p.numel() for p in model.parameters()))
     print('Device in Use : ', device)
-    print('Model in Use : ', model)
-    print('Model Parameters : ', model.parameters)
-    print('Model State Dict : ', model.state_dict)
-    print('Model Optimizer : ', optimizer)
-    
+
+    Tranining_Start_Time = str(time.strftime("%c"))
     for epoch in range(num_epochs):
         # start time current time
-        config.training_start_time = time.strftime("%c")
         model.train()
         running_loss = 0.0
         with tqdm(train_loader, unit="batch") as tepoch:
@@ -59,9 +62,10 @@ def train(model, train_loader, criterion, optimizer, config):
                 torch.cuda.empty_cache()
 
         avg_loss = running_loss / len(train_loader)
+        average_training_loss.append(avg_loss)
         print(f"Epoch [{epoch+1}/{num_epochs}], Average Loss: {avg_loss:.4f}")
         torch.cuda.empty_cache()
-        config.training_end_time = time.strftime("%c")
+    Training_End_Time = str(time.strftime("%c"))
 
     # if config.Save_Model:        
     #     # create name convention for model includeing epoch and loss time date etc
