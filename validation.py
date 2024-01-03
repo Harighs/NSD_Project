@@ -9,7 +9,7 @@ import numpy as np
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
-from training import average_training_loss
+from training import average_training_loss , Tranining_Start_Time , Training_End_Time
 
 def validation(model, test_loader, criterion, optimizer, config):
     if torch.cuda.is_available():
@@ -80,11 +80,10 @@ def validation(model, test_loader, criterion, optimizer, config):
             f.write(f"Average Test Loss: {avg_loss:.4f}\n")
             f.write(f"Model Saving Path: {os.path.join(os.getcwd(), config.Saving_Model_Path, model_name_for_saving)}\n\n")
             
-            
-        # Subjects used for training
-        # Time details
-            # diff = time.mktime(time.strptime(config.training_end_time)) - time.mktime(time.strptime(config.training_start_time)) / 60
-            # f.write(f"Traning_Time : {diff} minutes" )
+            f.write("### Time Details ###\n")
+            #TODO: Add time functions
+            f.write(f"Training Start Time: {Tranining_Start_Time}\n")
+            f.write(f"Training End Time: {Training_End_Time}\n")
             f.close()
 
 

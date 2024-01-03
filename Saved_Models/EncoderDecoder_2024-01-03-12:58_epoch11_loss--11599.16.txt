@@ -29,7 +29,7 @@ EncoderDecoder(
 )
 
 ### Testing Configuration ###
-Number of Epochs: 2
+Number of Epochs: 10
 Batch Size: 32
 Learning Rate: 0.001
 Loss Function: BCELoss
@@ -42,7 +42,10 @@ Device in Use: cuda
 Subjects used for training: (1,)
 
 ### Testing Process ###
-Average Training Loss: -11216.8916
+Average Training Loss: -11324.2661
 Average Test Loss: -11599.1646
-Model Saving Path: /home/hari/Projects/NSD_Project/Saved_Models/EncoderDecoder_2024-01-03-12:26_epoch3_loss--11599.16.pth
+Model Saving Path: /home/hari/Projects/NSD_Project/Saved_Models/EncoderDecoder_2024-01-03-12:58_epoch11_loss--11599.16.pth
 
+### Time Details ###
+Training Start Time: None
+Training End Time: None

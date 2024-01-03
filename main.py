@@ -27,7 +27,6 @@ Validation_Dataset = CustomTrainDataset(base_path=config.data_path, subjects=con
 Validation_DataLoader = DataLoader(Validation_Dataset, batch_size=config.batch_size, shuffle=False)
 print('DataLoader: Success')
 
-
 # MODEL LOADING
 model = EncoderDecoder(config.input_dim, config.output_dim)
 # model = Very_Deep_VAE(latent_dim=2, config=config)

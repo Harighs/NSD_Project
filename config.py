@@ -5,7 +5,7 @@ class Config:
     output_dim = (256, 256)  # Height, Width
     learning_rate = 0.001
     batch_size = 32
-    num_epochs = 2
+    num_epochs = 10
     subject_to_use = (1,)
     data_path = '/media/hari/2TB_T7/DATASET/FMRI/NSD-Furkan_Ozcelik/brain-diffuser/data/processed_data/'
     Save_Model = True
