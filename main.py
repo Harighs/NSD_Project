@@ -28,8 +28,8 @@ Validation_DataLoader = DataLoader(Validation_Dataset, batch_size=config.batch_s
 print('DataLoader: Success')
 
 # MODEL LOADING
-model = EncoderDecoder(config.input_dim, config.output_dim)
-# model = Very_Deep_VAE(latent_dim=2, config=config)
+# model = EncoderDecoder(config.input_dim, config.output_dim)
+model = Very_Deep_VAE(latent_dim=2, config=config)
 
 # LOADING FUNCTIONS
 optimizer = Adam(model.parameters(), lr=0.001)

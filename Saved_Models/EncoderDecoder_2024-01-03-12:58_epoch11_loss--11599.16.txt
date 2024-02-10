@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%% TESTING %%%%%%%%%%%%%%%%%%%%%%%%
 ### Model Architecture and Configuration ###
 Model Used: EncoderDecoder
-Total Parameters : 218959360
+Total Parameters : 218959360 2
 Model Summary:
 EncoderDecoder(
   (encoder): Sequential(

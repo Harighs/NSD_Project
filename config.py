@@ -10,7 +10,7 @@ class Config:
 
 # Hyperparameters
     learning_rate = 0.001
-    batch_size = 32
+    batch_size = 1
     num_epochs = 10
    
 # Training Configuration

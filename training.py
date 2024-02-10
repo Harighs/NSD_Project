@@ -8,6 +8,7 @@ import time
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
+
 average_training_loss = []
 Tranining_Start_Time = None
 Training_End_Time = None
@@ -18,11 +19,12 @@ def train(model, train_loader, criterion, optimizer, config):
     
     if torch.cuda.is_available():
         device = torch.device('cuda')
+        print('GPU available : ', torch.cuda.get_device_name(0))
     else:
         raise Exception('GPU not available')
 
     # Initialize the model, loss function, and optimizer
-    model.to(device)
+    model.cuda()
     num_epochs = config.num_epochs
     
     # Prinitng out details and model summary for sanity
